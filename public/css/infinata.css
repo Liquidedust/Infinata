@@ -285,6 +285,9 @@ h2, h3, h4, h5, h6 {
 }
 
 #body .content .text .gallery a {
+    
+    transition: filter 600ms ease-in-out;
+    
     position: relative;
     
     display: block;
@@ -294,6 +297,12 @@ h2, h3, h4, h5, h6 {
     margin: 2px 0px;
     
     overflow: hidden;
+    
+    -webkit-filter: grayscale(50%) sepia(25%);
+}
+
+#body .content .text .gallery a:hover {
+    -webkit-filter: grayscale(0%) sepia(0%);
 }
 
 #body .content .text .gallery a .infobar {
@@ -359,30 +368,32 @@ h2, h3, h4, h5, h6 {
     opacity: 0;
     
     z-index: 10;
+    
+    transform:      scale(0.5)
 }
 
 #body .content .text .gallery a .infobar_zoom_arrow_ul {
-    top: 37px;
-    left: 12px;
+    top: 57px;
+    left: 32px;
 }
 
 #body .content .text .gallery a .infobar_zoom_arrow_ur {
-    top: 37px;
-    right: 12px;
+    top: 57px;
+    right: 32px;
     
     -webkit-transform:rotate(90deg);
 }
 
 #body .content .text .gallery a .infobar_zoom_arrow_bl {
     bottom: 12px;
-    left: 12px;
+    left: 32px;
     
     -webkit-transform:rotate(-90deg);
 }
 
 #body .content .text .gallery a .infobar_zoom_arrow_br {
     bottom: 12px;
-    right: 12px;
+    right: 32px;
     
     -webkit-transform:rotate(180deg);
 }

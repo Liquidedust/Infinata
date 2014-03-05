@@ -134,7 +134,7 @@ $(document).ready(function() {
             $this = $(this);
             
             $(this).append("<div class='infobar'>" + $(this).attr('title') + "</div>");
-            $(this).append("<div class='infobar_footer'></div>");
+            // $(this).append("<div class='infobar_footer'></div>");
             
             $(this).append("<div class='infobar_zoom_arrow_ul'></div>");
             $(this).append("<div class='infobar_zoom_arrow_ur'></div>");
@@ -151,10 +151,11 @@ $(document).ready(function() {
                 'background-image'          :       function(){
                     return 'url(' + $this.find('img').prop('src') + ')';
                 },
-                'background-size'           :       '100% 100%',
+                'background-size'           :       '100%',
                 'background-repeat'         :       'no-repeat',
-                opacity                     :       0,
                 'background-position'       :       'center',
+                'transform'                 :       'scale(0.5)',
+                opacity                     :       0,
                 'z-index'                   :       1
             });
         });
@@ -170,26 +171,30 @@ $(document).ready(function() {
             },animate_speed);
             
             $(this).find('.infobar_zoom_arrow_ul').animate({
-                top     :       '-=10px',
-                left    :       '-=10px',
+                top     :       '-=30px',
+                left    :       '-=30px',
+                transform   :   'scale(1.0)',
                 opacity :       1
             },animate_speed);
             
             $(this).find('.infobar_zoom_arrow_ur').animate({
-                top     :       '-=10px',
-                right   :       '-=10px',
+                top     :       '-=30px',
+                right   :       '-=30px',
+                transform   :   'scale(1.0)',
                 opacity :       1
             },animate_speed);
             
             $(this).find('.infobar_zoom_arrow_bl').animate({
-                bottom  :       '-=10px',
-                left    :       '-=10px',
+                bottom  :       '-=30px',
+                left    :       '-=30px',
+                transform   :   'scale(1.0)',
                 opacity :       1
             },animate_speed);
             
             $(this).find('.infobar_zoom_arrow_br').animate({
-                bottom  :       '-=10px',
-                right   :       '-=10px',
+                bottom  :       '-=30px',
+                right   :       '-=30px',
+                transform   :   'scale(1.0)',
                 opacity :       1
             },animate_speed);
             
@@ -204,26 +209,30 @@ $(document).ready(function() {
             },animate_speed);
             
             $(this).find('.infobar_zoom_arrow_ul').animate({
-                top     :       '+=10px',
-                left    :       '+=10px',
+                top         :   '+=30px',
+                left        :   '+=30px',
+                transform   :   'scale(0.5)',
                 opacity :       0
             },animate_speed);
             
             $(this).find('.infobar_zoom_arrow_ur').animate({
-                top     :       '+=10px',
-                right   :       '+=10px',
+                top     :       '+=30px',
+                right   :       '+=30px',
+                transform   :   'scale(0.5)',
                 opacity :       0
             },animate_speed);
             
             $(this).find('.infobar_zoom_arrow_bl').animate({
-                bottom  :       '+=10px',
-                left    :       '+=10px',
+                bottom  :       '+=30px',
+                left    :       '+=30px',
+                transform   :   'scale(0.5)',
                 opacity :       0
             },animate_speed);
             
             $(this).find('.infobar_zoom_arrow_br').animate({
-                bottom  :       '+=10px',
-                right   :       '+=10px',
+                bottom  :       '+=30px',
+                right   :       '+=30px',
+                transform   :   'scale(0.5)',
                 opacity :       0
             },animate_speed);
             
