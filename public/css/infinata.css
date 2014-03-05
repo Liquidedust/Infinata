@@ -238,6 +238,19 @@ h2, h3, h4, h5, h6 {
     margin-bottom: 20px;
 }
 
+
+@media (max-width: 1000px) {
+    #body .content .text .gallery {
+        position: relative;
+        width: 100%;
+        height: auto;
+        -webkit-column-count: 3;
+        -webkit-column-gap: 2px;
+        -moz-column-count: 3;
+        -moz-column-gap: 2px;
+    }
+}
+
 @media (max-width: 750px) {
     #body .content .text .paragraphs {
         position: relative;
@@ -292,6 +305,8 @@ h2, h3, h4, h5, h6 {
     
     padding: 2px 5px 2px 20px;
     
+    border-bottom: 1px solid #000;
+    
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -299,6 +314,8 @@ h2, h3, h4, h5, h6 {
     color: #fff;
     font-weight: normal;
     background: rgba(0,0,0,0.5);
+    
+    z-index: 10;
 }
 
 #body .content .text .gallery a .infobar_footer {
@@ -310,6 +327,8 @@ h2, h3, h4, h5, h6 {
     
     padding: 2px 20px 2px 5px;
     
+    border-top: 1px solid #000;
+    
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -319,6 +338,58 @@ h2, h3, h4, h5, h6 {
     background: rgba(0,0,0,0.5);
     
     text-align: right;
+    
+    z-index: 10;
+}
+
+#body .content .text .gallery a .infobar_zoom_arrow_ul,
+#body .content .text .gallery a .infobar_zoom_arrow_ur,
+#body .content .text .gallery a .infobar_zoom_arrow_bl,
+#body .content .text .gallery a .infobar_zoom_arrow_br {
+    display: block;
+    height: 16px;
+    width: 16px;
+    
+    position: absolute;
+    
+    background: url('../img/ui/zoom_arrow.svg');
+    background-size: 12px 12px;
+    background-repeat:no-repeat;
+    
+    opacity: 0;
+    
+    z-index: 10;
+}
+
+#body .content .text .gallery a .infobar_zoom_arrow_ul {
+    top: 37px;
+    left: 12px;
+}
+
+#body .content .text .gallery a .infobar_zoom_arrow_ur {
+    top: 37px;
+    right: 12px;
+    
+    -webkit-transform:rotate(90deg);
+}
+
+#body .content .text .gallery a .infobar_zoom_arrow_bl {
+    bottom: 12px;
+    left: 12px;
+    
+    -webkit-transform:rotate(-90deg);
+}
+
+#body .content .text .gallery a .infobar_zoom_arrow_br {
+    bottom: 12px;
+    right: 12px;
+    
+    -webkit-transform:rotate(180deg);
+}
+
+#body .content .text .gallery a .infobar_img_zoom {
+    -webkit-transition: background-size 200ms ease-in-out,
+        opacity 200ms ease-in-out;
 }
 
 #body .content .text .gallery img {

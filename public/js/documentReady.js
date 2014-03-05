@@ -130,8 +130,33 @@ $(document).ready(function() {
         });
         
         $(".gallery a").each(function(){
+            
+            $this = $(this);
+            
             $(this).append("<div class='infobar'>" + $(this).attr('title') + "</div>");
             $(this).append("<div class='infobar_footer'></div>");
+            
+            $(this).append("<div class='infobar_zoom_arrow_ul'></div>");
+            $(this).append("<div class='infobar_zoom_arrow_ur'></div>");
+            $(this).append("<div class='infobar_zoom_arrow_bl'></div>");
+            $(this).append("<div class='infobar_zoom_arrow_br'></div>");
+            
+            $(this).append("<div class='infobar_img_zoom'></div>").find('.infobar_img_zoom').css({
+                position                    :       'absolute',
+                top                         :       0,
+                left                        :       0,
+                display                     :       'block',
+                height                      :       '100%',
+                width                       :       '100%',
+                'background-image'          :       function(){
+                    return 'url(' + $this.find('img').prop('src') + ')';
+                },
+                'background-size'           :       '100% 100%',
+                'background-repeat'         :       'no-repeat',
+                opacity                     :       0,
+                'background-position'       :       'center',
+                'z-index'                   :       1
+            });
         });
         
         $(".gallery a").hover(function(){
@@ -144,6 +169,30 @@ $(document).ready(function() {
                 bottom     :       '+=25px'
             },animate_speed);
             
+            $(this).find('.infobar_zoom_arrow_ul').animate({
+                top     :       '-=10px',
+                left    :       '-=10px',
+                opacity :       1
+            },animate_speed);
+            
+            $(this).find('.infobar_zoom_arrow_ur').animate({
+                top     :       '-=10px',
+                right   :       '-=10px',
+                opacity :       1
+            },animate_speed);
+            
+            $(this).find('.infobar_zoom_arrow_bl').animate({
+                bottom  :       '-=10px',
+                left    :       '-=10px',
+                opacity :       1
+            },animate_speed);
+            
+            $(this).find('.infobar_zoom_arrow_br').animate({
+                bottom  :       '-=10px',
+                right   :       '-=10px',
+                opacity :       1
+            },animate_speed);
+            
         },function(){
             
             $(this).find('.infobar').animate({
@@ -152,6 +201,30 @@ $(document).ready(function() {
             
             $(this).find('.infobar_footer').animate({
                 bottom     :       '-=25px'
+            },animate_speed);
+            
+            $(this).find('.infobar_zoom_arrow_ul').animate({
+                top     :       '+=10px',
+                left    :       '+=10px',
+                opacity :       0
+            },animate_speed);
+            
+            $(this).find('.infobar_zoom_arrow_ur').animate({
+                top     :       '+=10px',
+                right   :       '+=10px',
+                opacity :       0
+            },animate_speed);
+            
+            $(this).find('.infobar_zoom_arrow_bl').animate({
+                bottom  :       '+=10px',
+                left    :       '+=10px',
+                opacity :       0
+            },animate_speed);
+            
+            $(this).find('.infobar_zoom_arrow_br').animate({
+                bottom  :       '+=10px',
+                right   :       '+=10px',
+                opacity :       0
             },animate_speed);
             
         });
