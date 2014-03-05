@@ -24,6 +24,8 @@ var cookie = new Object({
     }
 });
 
+var a_gallery_resize;
+
 $(document).ready(function() {
         $(".fancybox").fancybox({
             openEffect      :       'elastic',
@@ -236,5 +238,8 @@ $(document).ready(function() {
                 opacity :       0
             },animate_speed);
             
+        });
+        
+        $(window).on('resize',function(){
         });
 });
